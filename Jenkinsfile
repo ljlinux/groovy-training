@@ -4,22 +4,25 @@ pipeline {
     stages {
         stage('Presetup') {
             steps {
-                echo 'Preparing..'
+                echo 'Preparing the environment..'
             }
         }
-        stage('Build') {
+        stage('DEV Step') {
             steps {
-                echo 'Building..'
+                echo 'Executing DEV Script..'
+                sh '' sh dev.sh ''
             }
         }
-        stage('Test') {
+        stage('SIT Step') {
             steps {
-                echo 'Testing..'
+                echo 'Executing SIT Script..'
+                sh '' sh sit.sh ''
             }
         }
-        stage('Deploy') {
+        stage('UAT Step') {
             steps {
-                echo 'Deploying....'
+                echo 'Executing UAT Script..'
+                sh '' sh uat.sh ''
             }
         }
         stage('Clean') {
