@@ -1,0 +1,1 @@
+echo "My UAT script"
